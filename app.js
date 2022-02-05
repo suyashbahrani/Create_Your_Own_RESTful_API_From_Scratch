@@ -70,6 +70,44 @@ app.route("/articles/:articleTitle")
         }
         
     });
+})
+
+// put replaces the object with new object
+.put(function(req, res){
+    Article.update(
+        {title: req.params.articleTitle},
+        {title: req.body.title, content: req.body.content},
+        function(err){
+            if(!err){
+                res.send("Succesfully updated article");
+            } else{
+                res.send(err);
+            }
+        }
+    );
+})
+
+// updating only one field 
+.patch(function(req, res){
+    Article.update(
+        {title: req.params.articleTitle},
+        {$set: req.body},
+        function(err){
+            if(!err){
+                res.send("Succesfully updated the article");
+            }
+        }
+    );
+})
+.delete(function(req, res){
+    Article.deleteOne(
+        {title: req.params.articleTitle},
+        function(err){
+            if(!err){
+                res.send("Successfully deleted the " + req.params.articleTitle);
+            }
+        }
+    );
 });
 
 app.listen(3000, function() {
