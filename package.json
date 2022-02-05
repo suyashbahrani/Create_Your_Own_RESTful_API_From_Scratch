@@ -1,0 +1,25 @@
+{
+  "name": "create_your_own_restful_api_from_scratch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suyashbahrani/Create_Your_Own_RESTful_API_From_Scratch.git"
+  },
+  "author": "Suyash Bahrani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suyashbahrani/Create_Your_Own_RESTful_API_From_Scratch/issues"
+  },
+  "homepage": "https://github.com/suyashbahrani/Create_Your_Own_RESTful_API_From_Scratch#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.0"
+  }
+}
