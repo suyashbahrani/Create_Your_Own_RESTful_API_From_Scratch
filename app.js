@@ -59,8 +59,18 @@ app.route("/articles")
     });
 });
 
-
-
+// documentation from expressjs.com routing
+app.route("/articles/:articleTitle")
+.get(function(req, res){
+    Article.findOne({title: req.params.articleTitle}, function(err, foundArticle){
+        if (foundArticle){
+            res.send(foundArticle);
+        } else {
+            res.send(err);
+        }
+        
+    });
+});
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
